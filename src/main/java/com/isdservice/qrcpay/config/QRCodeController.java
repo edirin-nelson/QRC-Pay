@@ -1,6 +1,8 @@
 package com.isdservice.qrcpay.config;
 
 import com.google.zxing.WriterException;
+import com.isdservice.qrcpay.dto.request.MerchantDetailsRequest;
+import com.isdservice.qrcpay.service.QRCodeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,7 +18,7 @@ public class QRCodeController {
     private final QRCodeService qrCodeService;
 
     @PostMapping (value = "/generateQRCode", produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity<byte[]> generateQRCode(@RequestBody MerchantDetailsDto merchantDetails) throws IOException, WriterException {
+    public ResponseEntity<byte[]> generateQRCode(@RequestBody MerchantDetailsRequest merchantDetails) throws IOException, WriterException {
         return new ResponseEntity<>(qrCodeService.generateQRCode(merchantDetails), HttpStatus.OK);
     }
 }

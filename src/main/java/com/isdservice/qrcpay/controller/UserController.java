@@ -1,14 +1,12 @@
 package com.isdservice.qrcpay.controller;
 
-package com.isdservices.paymentwithqrcode.controller;
-
-import com.isdservices.paymentwithqrcode.dto.request.BankTransferRequest;
-import com.isdservices.paymentwithqrcode.dto.request.QRcodeRequest;
-import com.isdservices.paymentwithqrcode.dto.response.BankTransferResponse;
-import com.isdservices.paymentwithqrcode.dto.response.QRcodeResponse;
-import com.isdservices.paymentwithqrcode.model.Wallet;
-import com.isdservices.paymentwithqrcode.service.TransferService;
-import com.isdservices.paymentwithqrcode.service.WalletService;
+import com.isdservice.qrcpay.dto.request.BankTransferRequest;
+import com.isdservice.qrcpay.dto.request.QRcodeRequest;
+import com.isdservice.qrcpay.dto.response.BankTransferResponse;
+import com.isdservice.qrcpay.dto.response.QRcodeResponse;
+import com.isdservice.qrcpay.entity.Wallet;
+import com.isdservice.qrcpay.service.TransferService;
+import com.isdservice.qrcpay.service.WalletService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
