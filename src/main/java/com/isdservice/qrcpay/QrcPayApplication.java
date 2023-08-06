@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class QrcPayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(QrcPayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(QrcPayApplication.class, args);
+    }
 
 }
