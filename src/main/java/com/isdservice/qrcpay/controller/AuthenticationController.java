@@ -3,6 +3,7 @@ package com.isdservice.qrcpay.controller;
 import com.isdservice.qrcpay.dto.request.LoginRequest;
 import com.isdservice.qrcpay.dto.request.RegisterRequest;
 import com.isdservice.qrcpay.dto.response.LoginResponse;
+import com.isdservice.qrcpay.dto.response.RegisterResponse;
 import com.isdservice.qrcpay.entity.User;
 import com.isdservice.qrcpay.exceptions.UserAccountDisabledException;
 import com.isdservice.qrcpay.exceptions.UserAlreadyExistsException;
@@ -32,7 +33,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody @Valid @NonNull RegisterRequest request) throws UserAlreadyExistsException, UserNotFoundException {
+    public ResponseEntity<RegisterResponse> registerUser(@RequestBody @Valid @NonNull RegisterRequest request) throws UserAlreadyExistsException, UserNotFoundException {
         return ResponseEntity.ok(userService.registerUser(request));
     }
 

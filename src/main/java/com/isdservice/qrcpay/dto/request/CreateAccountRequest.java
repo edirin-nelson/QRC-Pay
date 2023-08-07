@@ -1,6 +1,5 @@
 package com.isdservice.qrcpay.dto.request;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +15,7 @@ public class CreateAccountRequest {
     private boolean is_permanent;
     private String bvn;
     private String tx_ref;
-    private String phonenumber;
+    private String phoneNumber;
     private String firstname;
     private String lastname;
     private String narration;

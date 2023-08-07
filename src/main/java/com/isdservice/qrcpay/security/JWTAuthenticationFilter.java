@@ -1,6 +1,6 @@
 package com.isdservice.qrcpay.security;
 
-import com.isdservices.paymentwithqrcode.repository.JwtTokenRepository;
+import com.isdservice.qrcpay.repository.JwtTokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

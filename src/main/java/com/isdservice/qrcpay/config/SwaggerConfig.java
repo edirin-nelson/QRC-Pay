@@ -1,8 +1,5 @@
 package com.isdservice.qrcpay.config;
 
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
-import io.swagger.v3.oas.annotations.security.SecurityScheme;
-import io.swagger.v3.oas.annotations.security.SecuritySchemes;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import org.springdoc.core.models.GroupedOpenApi;
@@ -29,10 +26,26 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public GroupedOpenApi usersEndpoint() {
+    public GroupedOpenApi QRCodeEndpoint() {
         return GroupedOpenApi
                 .builder()
                 .group("qrcode")
                 .pathsToMatch("/api/qrcode/**").build();
+    }
+
+    @Bean
+    public GroupedOpenApi authEndpoint() {
+        return GroupedOpenApi
+                .builder()
+                .group("auth")
+                .pathsToMatch("/api/v1/auth/**").build();
+    }
+
+    @Bean
+    public GroupedOpenApi userEndpoint() {
+        return GroupedOpenApi
+                .builder()
+                .group("user")
+                .pathsToMatch("/api/v1/user/**").build();
     }
 }

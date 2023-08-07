@@ -1,6 +1,7 @@
 package com.isdservice.qrcpay.service;
 
-import com.isdservices.paymentwithqrcode.model.Wallet;
+
+import com.isdservice.qrcpay.entity.Wallet;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

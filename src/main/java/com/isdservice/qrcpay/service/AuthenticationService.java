@@ -1,10 +1,10 @@
 package com.isdservice.qrcpay.service;
 
 
-import com.isdservices.paymentwithqrcode.dto.request.LoginRequest;
-import com.isdservices.paymentwithqrcode.dto.response.LoginResponse;
-import com.isdservices.paymentwithqrcode.exception.UserAccountDisabledException;
-import com.isdservices.paymentwithqrcode.exception.UserNotFoundException;
+import com.isdservice.qrcpay.dto.request.LoginRequest;
+import com.isdservice.qrcpay.dto.response.LoginResponse;
+import com.isdservice.qrcpay.exceptions.UserAccountDisabledException;
+import com.isdservice.qrcpay.exceptions.UserNotFoundException;
 
 public interface AuthenticationService  {
 

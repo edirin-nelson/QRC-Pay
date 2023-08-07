@@ -1,7 +1,8 @@
 package com.isdservice.qrcpay.repository;
 
-import com.isdservices.paymentwithqrcode.model.User;
-import com.isdservices.paymentwithqrcode.model.Wallet;
+
+import com.isdservice.qrcpay.entity.User;
+import com.isdservice.qrcpay.entity.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

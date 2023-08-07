@@ -1,11 +1,12 @@
 package com.isdservice.qrcpay.service.serviceImpl;
 
-import com.isdservices.paymentwithqrcode.model.User;
-import com.isdservices.paymentwithqrcode.model.Wallet;
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.repository.WalletRepository;
-import com.isdservices.paymentwithqrcode.service.WalletService;
-import com.isdservices.paymentwithqrcode.utils.SecurityUtils;
+
+import com.isdservice.qrcpay.entity.User;
+import com.isdservice.qrcpay.entity.Wallet;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.repository.WalletRepository;
+import com.isdservice.qrcpay.service.WalletService;
+import com.isdservice.qrcpay.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

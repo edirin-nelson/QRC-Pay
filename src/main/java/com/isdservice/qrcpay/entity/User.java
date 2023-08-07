@@ -1,6 +1,6 @@
 package com.isdservice.qrcpay.entity;
 
-import com.isdservices.paymentwithqrcode.enums.Role;
+import com.isdservice.qrcpay.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -40,6 +40,7 @@ public class User implements UserDetails {
 
     private String password;
 
+//    @Enumerated(EnumType.STRING)
     private Role role;
 
     private Boolean enabled;

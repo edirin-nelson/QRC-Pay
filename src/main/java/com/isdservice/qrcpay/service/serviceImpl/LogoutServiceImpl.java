@@ -1,9 +1,9 @@
 package com.isdservice.qrcpay.service.serviceImpl;
 
 
-import com.isdservices.paymentwithqrcode.repository.JwtTokenRepository;
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.security.JwtService;
+import com.isdservice.qrcpay.repository.JwtTokenRepository;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.security.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

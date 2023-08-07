@@ -1,12 +1,12 @@
 package com.isdservice.qrcpay.service;
 
 
-import com.isdservices.paymentwithqrcode.dto.request.RegisterRequest;
-import com.isdservices.paymentwithqrcode.exception.UserAlreadyExistsException;
-import com.isdservices.paymentwithqrcode.exception.UserNotFoundException;
-import com.isdservices.paymentwithqrcode.model.User;
+import com.isdservice.qrcpay.dto.request.RegisterRequest;
+import com.isdservice.qrcpay.dto.response.RegisterResponse;
+import com.isdservice.qrcpay.exceptions.UserAlreadyExistsException;
+import com.isdservice.qrcpay.exceptions.UserNotFoundException;
 
 public interface UserService {
 
-    User registerUser(RegisterRequest request) throws UserAlreadyExistsException, UserNotFoundException;
+    RegisterResponse registerUser(RegisterRequest request) throws UserAlreadyExistsException, UserNotFoundException;
 }

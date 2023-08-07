@@ -1,19 +1,20 @@
 package com.isdservice.qrcpay.service.serviceImpl;
 
 
-import com.isdservices.paymentwithqrcode.dto.request.CreateAccountRequest;
-import com.isdservices.paymentwithqrcode.dto.request.RegisterRequest;
-import com.isdservices.paymentwithqrcode.dto.response.CreateAccountResponse;
-import com.isdservices.paymentwithqrcode.enums.Role;
-import com.isdservices.paymentwithqrcode.exception.UserAlreadyExistsException;
-import com.isdservices.paymentwithqrcode.flutterAPI.AccountCreationData;
-import com.isdservices.paymentwithqrcode.flutterAPI.FlutterURLs;
-import com.isdservices.paymentwithqrcode.flutterAPI.RestTemplateUtils;
-import com.isdservices.paymentwithqrcode.model.User;
-import com.isdservices.paymentwithqrcode.model.Wallet;
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.repository.WalletRepository;
-import com.isdservices.paymentwithqrcode.service.UserService;
+import com.isdservice.qrcpay.dto.request.CreateAccountRequest;
+import com.isdservice.qrcpay.dto.request.RegisterRequest;
+import com.isdservice.qrcpay.dto.response.CreateAccountResponse;
+import com.isdservice.qrcpay.dto.response.RegisterResponse;
+import com.isdservice.qrcpay.entity.User;
+import com.isdservice.qrcpay.entity.Wallet;
+import com.isdservice.qrcpay.enums.Role;
+import com.isdservice.qrcpay.exceptions.UserAlreadyExistsException;
+import com.isdservice.qrcpay.flutterAPI.AccountCreationData;
+import com.isdservice.qrcpay.flutterAPI.FlutterURLs;
+import com.isdservice.qrcpay.flutterAPI.RestTemplateUtils;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.repository.WalletRepository;
+import com.isdservice.qrcpay.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
@@ -38,7 +39,7 @@ public class UserServiceImpl implements UserService {
     private final WalletRepository walletRepo;
 
     @Override
-    public User registerUser(RegisterRequest request) throws UserAlreadyExistsException {
+    public RegisterResponse registerUser(RegisterRequest request) throws UserAlreadyExistsException {
 
         Optional<User> user = userRepository.findByEmail(request.getEmail());
 
@@ -61,7 +62,12 @@ public class UserServiceImpl implements UserService {
         User u = userRepository.save(newUser);
         createAccount(u);
 
-        return u;
+        RegisterResponse response = new RegisterResponse();
+        response.setEmail(u.getEmail());
+        response.setLastName(u.getLastName());
+        response.setFirstName(u.getFirstName());
+
+        return response;
     }
 
     private void createAccount( User user){
@@ -70,7 +76,7 @@ public class UserServiceImpl implements UserService {
                .is_permanent(true)
                .bvn(user.getBvn())
                .tx_ref("VA12")
-               .phonenumber(user.getPhoneNumber())
+               .phoneNumber(user.getPhoneNumber())
                .firstname(user.getFirstName())
                .lastname(user.getLastName())
                .amount(5000)

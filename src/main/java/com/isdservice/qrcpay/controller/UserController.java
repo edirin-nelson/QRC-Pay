@@ -1,7 +1,7 @@
 package com.isdservice.qrcpay.controller;
 
 import com.isdservice.qrcpay.dto.request.BankTransferRequest;
-import com.isdservice.qrcpay.dto.request.QRcodeRequest;
+import com.isdservice.qrcpay.dto.request.QRCodeRequest;
 import com.isdservice.qrcpay.dto.response.BankTransferResponse;
 import com.isdservice.qrcpay.dto.response.QRcodeResponse;
 import com.isdservice.qrcpay.entity.Wallet;
@@ -27,8 +27,8 @@ public class UserController {
         return walletService.getWallet();
     }
     @PostMapping("/verify-qrcode")
-    public ResponseEntity<QRcodeResponse> verifyQRcode(@RequestBody QRcodeRequest request){
-        return transferService.verifyQRcodeDetails(request);
+    public ResponseEntity<QRcodeResponse> verifyQRcode(@RequestBody QRCodeRequest request){
+        return transferService.verifyQRCodeDetails(request);
     }
 
     @PostMapping("/transfer")

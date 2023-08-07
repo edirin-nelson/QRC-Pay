@@ -1,7 +1,7 @@
 package com.isdservice.qrcpay.dto.response;
 
 
-import com.isdservices.paymentwithqrcode.flutterAPI.AccountCreationData;
+import com.isdservice.qrcpay.flutterAPI.AccountCreationData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

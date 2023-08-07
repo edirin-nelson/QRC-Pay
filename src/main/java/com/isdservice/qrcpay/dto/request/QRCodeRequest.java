@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class QRcodeRequest {
+public class QRCodeRequest {
 
     private String bankName;
     private String accountNumber;

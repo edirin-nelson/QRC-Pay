@@ -1,15 +1,16 @@
 package com.isdservice.qrcpay.service.serviceImpl;
 
-import com.isdservices.paymentwithqrcode.dto.request.BankTransferRequest;
-import com.isdservices.paymentwithqrcode.dto.request.QRcodeRequest;
-import com.isdservices.paymentwithqrcode.dto.response.BankTransferResponse;
-import com.isdservices.paymentwithqrcode.dto.response.QRcodeResponse;
-import com.isdservices.paymentwithqrcode.model.User;
-import com.isdservices.paymentwithqrcode.model.Wallet;
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.repository.WalletRepository;
-import com.isdservices.paymentwithqrcode.service.TransferService;
-import com.isdservices.paymentwithqrcode.utils.SecurityUtils;
+
+import com.isdservice.qrcpay.dto.request.BankTransferRequest;
+import com.isdservice.qrcpay.dto.request.QRCodeRequest;
+import com.isdservice.qrcpay.dto.response.BankTransferResponse;
+import com.isdservice.qrcpay.dto.response.QRcodeResponse;
+import com.isdservice.qrcpay.entity.User;
+import com.isdservice.qrcpay.entity.Wallet;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.repository.WalletRepository;
+import com.isdservice.qrcpay.service.TransferService;
+import com.isdservice.qrcpay.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Component
 @RequiredArgsConstructor
@@ -30,7 +30,7 @@ public class TransferServiceImpl implements TransferService {
     private final BCryptPasswordEncoder passwordEncoder;
 
 
-    public ResponseEntity<QRcodeResponse> verifyQRcodeDetails(QRcodeRequest data){
+    public ResponseEntity<QRcodeResponse> verifyQRCodeDetails(QRCodeRequest data){
         // Verify the QRCode data
         Wallet wallet = walletRepo.findByAccountNumber(data.getAccountNumber());
         QRcodeResponse response = new QRcodeResponse();

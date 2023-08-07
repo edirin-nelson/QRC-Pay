@@ -1,16 +1,17 @@
 package com.isdservice.qrcpay.service.serviceImpl;
 
 
-import com.isdservices.paymentwithqrcode.dto.request.LoginRequest;
-import com.isdservices.paymentwithqrcode.dto.response.LoginResponse;
-import com.isdservices.paymentwithqrcode.exception.UserAccountDisabledException;
-import com.isdservices.paymentwithqrcode.exception.UserNotFoundException;
-import com.isdservices.paymentwithqrcode.model.JwtToken;
-import com.isdservices.paymentwithqrcode.model.User;
-import com.isdservices.paymentwithqrcode.repository.JwtTokenRepository;
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.security.JwtService;
-import com.isdservices.paymentwithqrcode.service.AuthenticationService;
+
+import com.isdservice.qrcpay.dto.request.LoginRequest;
+import com.isdservice.qrcpay.dto.response.LoginResponse;
+import com.isdservice.qrcpay.entity.JwtToken;
+import com.isdservice.qrcpay.entity.User;
+import com.isdservice.qrcpay.exceptions.UserAccountDisabledException;
+import com.isdservice.qrcpay.exceptions.UserNotFoundException;
+import com.isdservice.qrcpay.repository.JwtTokenRepository;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.security.JwtService;
+import com.isdservice.qrcpay.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,8 +1,8 @@
 package com.isdservice.qrcpay.security;
 
 
-import com.isdservices.paymentwithqrcode.repository.UserRepository;
-import com.isdservices.paymentwithqrcode.utils.SecurityUtils;
+import com.isdservice.qrcpay.repository.UserRepository;
+import com.isdservice.qrcpay.utils.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
