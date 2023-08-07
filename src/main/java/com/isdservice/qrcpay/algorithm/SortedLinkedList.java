@@ -38,4 +38,3 @@ public class SortedLinkedList {
         System.out.println();
     }
 }
-
